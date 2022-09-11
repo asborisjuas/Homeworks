@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class House : MonoBehaviour
@@ -15,7 +13,7 @@ public class House : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            _alarm.Play(_alarm.MaxVolume);
+            _alarm.IncreaceVolume();
         }
     }
 
@@ -23,7 +21,7 @@ public class House : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            _alarm.Play(_alarm.MinVolume);
+            _alarm.DecreaceVolume();
         }
     }
 }

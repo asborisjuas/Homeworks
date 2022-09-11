@@ -1,16 +1,27 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Alarm : MonoBehaviour
 {
+    private const float MinVolume = 0f;
+    private const float MaxVolume = 1f;
+
     [SerializeField] private float _volumeStep = 0.2f;
 
     private Coroutine _coroutine;
 
-    public float MinVolume => 0f;
-    public float MaxVolume => 1f;
+    public void IncreaceVolume()
+    {
+        Play(MaxVolume);
+    }
 
-    public void Play(float finalVolume)
+    public void DecreaceVolume()
+    {
+        Play(MinVolume);
+    }
+
+    private void Play(float finalVolume)
     {
         if (_coroutine != null)
         {
