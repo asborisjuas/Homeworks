@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyMover : MonoBehaviour
 {
     private const float Velocity = 5f;
     private const float DestinationX = 11.5f;
